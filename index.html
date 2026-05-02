@@ -50,14 +50,15 @@
     .now-reading .book-desc{font-size:13px;color:var(--color-secondary);line-height:1.7}
     .connect{padding:3rem 0;border-top:0.5px solid var(--border-soft)}
     .connect .label{font-size:11px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:1.5rem}
-    .connect .ig-card{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary);transition:border-color 0.2s, transform 0.2s}
-    .connect .ig-card:hover{border-color:var(--color-accent);transform:translateY(-1px)}
-    .connect .ig-card:hover *{color:var(--color-accent)}
-    .connect .ig-icon{flex-shrink:0;color:var(--color-accent)}
-    .connect .ig-text{flex:1;min-width:0}
-    .connect .ig-handle{font-size:14px;font-weight:500;margin-bottom:0.15rem;letter-spacing:-0.005em}
-    .connect .ig-desc{font-size:12px;color:var(--color-secondary);line-height:1.5}
-    .connect .ig-arrow{font-size:13px;color:var(--color-tertiary);flex-shrink:0}
+    .connect-cards{display:flex;flex-direction:column;gap:0.75rem}
+    .connect-card{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary);transition:border-color 0.2s, transform 0.2s}
+    .connect-card:hover{border-color:var(--color-accent);transform:translateY(-1px)}
+    .connect-card:hover *{color:var(--color-accent)}
+    .connect-card .connect-icon{flex-shrink:0;color:var(--color-accent)}
+    .connect-card .connect-text{flex:1;min-width:0}
+    .connect-card .connect-title{font-size:14px;font-weight:500;margin-bottom:0.15rem;letter-spacing:-0.005em}
+    .connect-card .connect-desc{font-size:12px;color:var(--color-secondary);line-height:1.5}
+    .connect-card .connect-arrow{font-size:13px;color:var(--color-tertiary);flex-shrink:0}
     footer{border-top:0.5px solid var(--border-soft);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
     footer .copyright{font-size:11px;color:var(--color-tertiary)}
     footer .socials{display:flex;gap:1.25rem;align-items:center}
@@ -141,18 +142,31 @@
   <section class="connect" id="connect">
     <div class="container">
       <p class="label">CONNECT</p>
-      <a href="https://instagram.com/sohee_lee12" class="ig-card" target="_blank" rel="noopener" aria-label="Instagram @sohee_lee12 방문">
-        <svg class="ig-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-        <div class="ig-text">
-          <p class="ig-handle">@sohee_lee12</p>
-          <p class="ig-desc">훈련, 빙판, 일상의 짧은 기록을 올려요.</p>
-        </div>
-        <span class="ig-arrow">→</span>
-      </a>
+      <div class="connect-cards">
+        <a href="https://instagram.com/sohee_lee12" class="connect-card" target="_blank" rel="noopener" aria-label="Instagram @sohee_lee12 방문">
+          <svg class="connect-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <div class="connect-text">
+            <p class="connect-title">@sohee_lee12</p>
+            <p class="connect-desc">훈련, 빙판, 일상의 짧은 기록을 올려요.</p>
+          </div>
+          <span class="connect-arrow">→</span>
+        </a>
+        <a href="mailto:le8389@naver.com" class="connect-card" aria-label="이메일로 문의 보내기">
+          <svg class="connect-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <div class="connect-text">
+            <p class="connect-title">이메일</p>
+            <p class="connect-desc">레슨 · 연구 협업 · 강연 문의는 메일로 받아요.</p>
+          </div>
+          <span class="connect-arrow">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -168,7 +182,7 @@
           </svg>
           @sohee_lee12
         </a>
-        <a href="mailto:le8189@gmail.com">Email</a>
+        <a href="mailto:le8389@naver.com">Email</a>
       </div>
     </footer>
   </div>
