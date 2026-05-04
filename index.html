@@ -64,6 +64,11 @@
     footer .socials{display:flex;gap:1.25rem;align-items:center}
     footer .socials a{font-size:11px;color:var(--color-secondary);display:inline-flex;align-items:center;gap:0.35rem}
     footer .socials a svg{flex-shrink:0}
+    .site-credit{text-align:center;padding:1.25rem 0 2rem}
+    .site-credit p{font-size:11px;color:var(--color-tertiary);line-height:1.75}
+    .site-credit .credit-line{font-weight:500;letter-spacing:0.05em;color:var(--color-secondary);margin-bottom:0.2rem}
+    .site-credit a{color:inherit;border-bottom:0.5px solid var(--border-soft);transition:color 0.2s, border-color 0.2s}
+    .site-credit a:hover{color:var(--color-accent);border-color:var(--color-accent)}
     @media(max-width:640px){
       .container{padding:0 1.25rem}
       nav .links{gap:0.9rem;flex-wrap:wrap;justify-content:flex-end}
@@ -201,6 +206,10 @@
         <a href="mailto:le8389@naver.com">Email</a>
       </div>
     </footer>
+    <div class="site-credit">
+      <p class="credit-line">Designed &amp; built by 이소희</p>
+      <p>사이트 제작 · 협업 문의 — <a href="mailto:le8389@naver.com">le8389@naver.com</a></p>
+    </div>
   </div>
 
 </body>
