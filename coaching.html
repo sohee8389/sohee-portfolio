@@ -135,6 +135,10 @@
     .site-credit .credit-line{font-weight:500;letter-spacing:0.05em;color:var(--color-secondary);margin-bottom:0.2rem}
     .site-credit a{color:inherit;border-bottom:0.5px solid var(--border-soft);transition:color 0.2s, border-color 0.2s}
     .site-credit a:hover{color:var(--color-accent);border-color:var(--color-accent)}
+    .to-top{position:fixed;bottom:1.5rem;right:1.5rem;width:42px;height:42px;border-radius:50%;background:var(--color-accent);color:var(--bg-primary);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.1);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.25s, transform 0.25s, background 0.15s;z-index:100}
+    .to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .to-top:hover{background:#234127}
+    .to-top svg{width:18px;height:18px}
 
     @media(max-width:640px){
       .container{padding:0 1.25rem}
@@ -152,6 +156,8 @@
       .cal-date{font-size:11px}
       .cal-slot{font-size:9px;padding:0.15rem 0.25rem}
       .cal-weekdays span{font-size:10px;padding:0.5rem 0}
+      .to-top{bottom:1rem;right:1rem;width:38px;height:38px}
+      .to-top svg{width:16px;height:16px}
     }
   </style>
 </head>
@@ -405,7 +411,28 @@
     </div>
   </div>
 
+  <button class="to-top" id="toTop" aria-label="맨 위로">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
   <script>
+    /* ============================================================
+       맨 위로 버튼 — 스크롤 300px 이상 내려갔을 때 나타남
+       ============================================================ */
+    (function() {
+      const btn = document.getElementById('toTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) btn.classList.add('visible');
+        else btn.classList.remove('visible');
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
     /* ============================================================
        레슨 일정 — 이 블록만 수정하세요 (매주 자동 반복됨)
        ============================================================
