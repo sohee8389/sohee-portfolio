@@ -87,6 +87,38 @@
     .photo-grid .figure{border-radius:6px;overflow:hidden;background:var(--bg-secondary);border:0.5px solid var(--border-soft);aspect-ratio:1/1}
     .photo-grid .figure img{display:block;width:100%;height:100%;object-fit:cover}
 
+    .schedule-intro{font-size:14px;color:var(--color-secondary);line-height:1.85;max-width:520px;margin-bottom:1.75rem}
+    .calendar{border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary);overflow:hidden}
+    .cal-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:0.5px solid var(--border-soft)}
+    .cal-header h3{font-size:14px;font-weight:500;letter-spacing:0.01em}
+    .cal-nav{background:none;border:none;color:var(--color-accent);font-size:18px;cursor:pointer;padding:0.25rem 0.7rem;line-height:1;border-radius:4px;transition:background 0.15s}
+    .cal-nav:hover{background:rgba(45,82,50,0.08)}
+    .cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);border-bottom:0.5px solid var(--border-soft)}
+    .cal-weekdays span{font-size:11px;text-align:center;padding:0.65rem 0;color:var(--color-tertiary);font-weight:500;letter-spacing:0.05em}
+    .cal-weekdays span:first-child{color:#A8554F}
+    .cal-weekdays span:last-child{color:#5470A0}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+    .cal-day{min-height:96px;padding:0.45rem 0.4rem;border-right:0.5px solid var(--border-soft);border-bottom:0.5px solid var(--border-soft);font-size:12px;display:flex;flex-direction:column;gap:0.2rem;background:var(--bg-secondary)}
+    .cal-day:nth-child(7n){border-right:none}
+    .cal-day-empty{background:var(--bg-primary);opacity:0.4}
+    .cal-date{font-size:12px;color:var(--color-secondary);font-weight:500}
+    .cal-day.is-today{box-shadow:inset 0 0 0 1.5px var(--color-accent)}
+    .cal-day.is-today .cal-date{color:var(--color-accent);font-weight:600}
+    .cal-day.is-past{background:var(--bg-primary);opacity:0.45}
+    .cal-day.is-past .cal-date{color:var(--color-tertiary)}
+    .cal-day.is-closed{background:var(--bg-primary)}
+    .cal-day.is-closed .cal-date{color:var(--color-tertiary)}
+    .cal-day.has-slots{background:rgba(45,82,50,0.04)}
+    .cal-slot{font-size:10px;background:rgba(45,82,50,0.12);color:var(--color-accent);padding:0.2rem 0.35rem;border-radius:3px;text-align:center;font-weight:500;line-height:1.3;letter-spacing:0.01em}
+    .schedule-note{font-size:12px;color:var(--color-tertiary);line-height:1.8;margin-top:1.25rem;text-align:center}
+    .schedule-note a{color:var(--color-accent);font-weight:500;border-bottom:0.5px solid var(--color-accent);transition:opacity 0.15s}
+    .schedule-note a:hover{opacity:0.7}
+    .schedule-legend{display:flex;justify-content:center;gap:1.25rem;margin-top:1rem;flex-wrap:wrap}
+    .schedule-legend span{font-size:11px;color:var(--color-tertiary);display:inline-flex;align-items:center;gap:0.4rem}
+    .schedule-legend .dot{width:10px;height:10px;border-radius:2px;display:inline-block}
+    .schedule-legend .dot-available{background:rgba(45,82,50,0.12);border:0.5px solid var(--color-accent)}
+    .schedule-legend .dot-closed{background:var(--bg-primary);border:0.5px solid var(--border-soft)}
+
     .cta-final{text-align:center;padding:4rem 0 4.5rem;border-top:0.5px solid var(--border-soft);background:var(--bg-secondary)}
     .cta-final h2{font-size:24px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:1rem}
     .cta-final p{font-size:13px;color:var(--color-secondary);line-height:1.85;margin-bottom:2.25rem}
@@ -116,6 +148,10 @@
       .lesson-info dt{font-size:12px}
       .philosophy h3,.medal-section h3{font-size:20px}
       .cta-final h2{font-size:20px}
+      .cal-day{min-height:80px;padding:0.3rem 0.25rem}
+      .cal-date{font-size:11px}
+      .cal-slot{font-size:9px;padding:0.15rem 0.25rem}
+      .cal-weekdays span{font-size:10px;padding:0.5rem 0}
     }
   </style>
 </head>
@@ -236,7 +272,7 @@
       <dl>
         <div class="row">
           <dt>대상</dt>
-          <dd>4세 ~ 성인 / 초보 취미반 ~ 선수 지망생 모두</dd>
+          <dd>7세 ~ 성인 / 초보 취미반 ~ 선수 지망생 모두</dd>
         </div>
         <div class="row">
           <dt>형태</dt>
@@ -248,17 +284,41 @@
         </div>
         <div class="row">
           <dt>가능 시간</dt>
-          <dd>평일 일부 (대학원 일정에 따라 매주 가용 시간이 달라집니다)</dd>
+          <dd>월 · 화 · 수 (45분 수업, 정각 시작)</dd>
         </div>
         <div class="row">
           <dt>휴무</dt>
-          <dd>학교 수업이 있는 날, 주말 · 공휴일</dd>
+          <dd>목 · 금 · 주말 · 공휴일</dd>
         </div>
         <div class="row">
           <dt>레슨비</dt>
           <dd>김포 웨이브즈 빙상장 정해진 요율 — 문의 시 안내</dd>
         </div>
       </dl>
+    </section>
+
+    <section class="schedule-section">
+      <p class="label">레슨 일정</p>
+      <p class="schedule-intro">기본 가능 요일은 <strong>월 · 화 · 수</strong> 입니다. 각 날짜에 표시된 시간대가 예약 가능한 시간이에요. 정확한 일정 조율은 카카오톡으로 문의해 주세요.</p>
+
+      <div class="calendar">
+        <div class="cal-header">
+          <button class="cal-nav" id="prevMonth" aria-label="이전 달">‹</button>
+          <h3 id="monthLabel">2026년 5월</h3>
+          <button class="cal-nav" id="nextMonth" aria-label="다음 달">›</button>
+        </div>
+        <div class="cal-weekdays">
+          <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+
+      <div class="schedule-legend">
+        <span><span class="dot dot-available"></span>예약 가능</span>
+        <span><span class="dot dot-closed"></span>휴무</span>
+      </div>
+
+      <p class="schedule-note">정확한 시간 조율은 <a href="http://pf.kakao.com/_yJxoTX/chat" target="_blank" rel="noopener">카카오톡으로 문의</a>해 주세요.</p>
     </section>
 
     <section class="faq">
@@ -344,6 +404,141 @@
       <p>사이트 제작 · 협업 문의 — <a href="mailto:le8389@naver.com">le8389@naver.com</a></p>
     </div>
   </div>
+
+  <script>
+    /* ============================================================
+       레슨 일정 — 이 블록만 수정하세요 (매주 자동 반복됨)
+       ============================================================
+       요일 번호 : 일=0, 월=1, 화=2, 수=3, 목=4, 금=5, 토=6
+
+       availableDays  : 기본 가능 요일 목록
+       defaultSlots   : 요일별 기본 시간 (매주 자동 적용)
+       customSlots    : 특정 날짜만 다르게 — 그 날의 기본 시간이 무시되고 이 시간으로 대체됨
+       closedDates    : 임시 휴무일 — 그 날은 통째로 닫힘
+       ============================================================ */
+    const lessonSchedule = {
+      availableDays: [1, 2, 3], // 월·화·수만 가능
+
+      // 요일별 기본 시간 (45분 수업, 매주 자동 반복)
+      defaultSlots: {
+        1: ['16:00~16:45', '17:00~17:45'],                       // 월요일
+        2: ['15:00~15:45', '16:00~16:45', '17:00~17:45'],        // 화요일
+        3: ['15:00~15:45', '16:00~16:45', '17:00~17:45']         // 수요일
+      },
+
+      // 특정 날짜만 시간 다르게 / 시간 일부 닫기 / 평소 닫힌 요일 임시 오픈
+      customSlots: {
+        // 사용 예시 :
+        // '2026-05-19': ['15:00~15:45', '17:00~17:45'], // 화요일 4시만 빼기
+        // '2026-05-12': ['18:00~18:45'],                // 화요일을 저녁 시간으로 변경
+        // '2026-05-21': ['14:00~14:45'],                // 평소 닫힌 목요일 임시 오픈
+        // '2026-05-26': []                              // 빈 배열로 두면 그 날 통째로 닫힘
+      },
+
+      // 임시 휴무일 (학교 시험, 출장, 공휴일 등)
+      closedDates: [
+        // '2026-06-06', // 예 : 현충일
+      ]
+    };
+
+    /* ============================================================
+       아래는 캘린더 렌더링 코드 — 수정 X
+       ============================================================ */
+    (function() {
+      const today = new Date();
+      let viewYear = today.getFullYear();
+      let viewMonth = today.getMonth();
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
+
+      function render() {
+        const monthLabel = document.getElementById('monthLabel');
+        const grid = document.getElementById('calGrid');
+        if (!monthLabel || !grid) return;
+
+        monthLabel.textContent = `${viewYear}년 ${viewMonth + 1}월`;
+
+        const firstDay = new Date(viewYear, viewMonth, 1);
+        const lastDay = new Date(viewYear, viewMonth + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startDayOfWeek = firstDay.getDay();
+        const todayKey = dateKey(today.getFullYear(), today.getMonth(), today.getDate());
+        const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+        let html = '';
+
+        for (let i = 0; i < startDayOfWeek; i++) {
+          html += '<div class="cal-day cal-day-empty"></div>';
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const key = dateKey(viewYear, viewMonth, day);
+          const cellDate = new Date(viewYear, viewMonth, day);
+          const dayOfWeek = cellDate.getDay();
+
+          const isToday = key === todayKey;
+          const isPast = cellDate < todayMidnight;
+          const isClosed = lessonSchedule.closedDates.includes(key);
+
+          // 시간 결정 : customSlots > defaultSlots
+          const hasCustom = Object.prototype.hasOwnProperty.call(lessonSchedule.customSlots, key);
+          const customSlots = hasCustom ? lessonSchedule.customSlots[key] : null;
+          const defaultSlots = lessonSchedule.defaultSlots[dayOfWeek] || [];
+
+          let slots = [];
+          let isAvailableDay = false;
+
+          if (isClosed) {
+            isAvailableDay = false;
+          } else if (hasCustom) {
+            slots = customSlots;
+            isAvailableDay = customSlots.length > 0;
+          } else if (lessonSchedule.availableDays.includes(dayOfWeek)) {
+            slots = defaultSlots;
+            isAvailableDay = slots.length > 0;
+          }
+
+          const hasSlots = slots.length > 0;
+
+          let cls = 'cal-day';
+          if (isPast) cls += ' is-past';
+          else if (!isAvailableDay) cls += ' is-closed';
+          else if (hasSlots) cls += ' has-slots';
+          if (isToday) cls += ' is-today';
+
+          let slotsHtml = '';
+          if (hasSlots && !isPast) {
+            slotsHtml = slots.map(s => `<div class="cal-slot">${s}</div>`).join('');
+          }
+
+          html += `<div class="${cls}"><span class="cal-date">${day}</span>${slotsHtml}</div>`;
+        }
+
+        grid.innerHTML = html;
+      }
+
+      const prevBtn = document.getElementById('prevMonth');
+      const nextBtn = document.getElementById('nextMonth');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          viewMonth--;
+          if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+          render();
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          viewMonth++;
+          if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+          render();
+        });
+      }
+
+      render();
+    })();
+  </script>
 
 </body>
 </html>
