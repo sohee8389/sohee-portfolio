@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="이소희 — 경희대학교 일반체육대학원 석사과정. 스포츠 현상학, 신체도식(Body Schema), 메를로-퐁티 신체현상학을 바탕으로 쇼트트랙 코치들의 지도 경험에 대한 질적 연구를 진행하고 있습니다.">
+  <title>연구 · 이소희</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg-primary:#FBFAF4;
+      --bg-secondary:#FFFFFF;
+      --color-primary:#1A1A1A;
+      --color-secondary:#555;
+      --color-tertiary:#888;
+      --color-accent:#2D5232;
+      --border-soft:rgba(0,0,0,0.06);
+      --font-sans:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    }
+    html,body{font-family:var(--font-sans);background:var(--bg-primary);color:var(--color-primary);line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none;transition:color 0.2s}
+    a:hover{color:var(--color-accent)}
+    .container{max-width:720px;margin:0 auto;padding:0 2rem}
+    nav{padding:1.5rem 0;border-bottom:0.5px solid var(--border-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    nav .logo{font-size:15px;font-weight:500;letter-spacing:0.02em;cursor:pointer}
+    nav .links{display:flex;gap:1.5rem;align-items:center}
+    nav .links a{font-size:13px;color:var(--color-secondary)}
+    nav .links a.active{color:var(--color-accent);font-weight:500}
+    nav .lang{font-size:12px;color:var(--color-accent);font-weight:500}
+
+    .hero{padding:4rem 0 2.5rem}
+    .hero .greeting{font-size:11px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:1.25rem;text-transform:uppercase}
+    .hero h1{font-size:38px;font-weight:500;line-height:1.2;margin-bottom:0.75rem;letter-spacing:-0.01em}
+    .hero h2{font-size:22px;font-weight:400;line-height:1.45;color:var(--color-primary)}
+    .hero .accent-line{height:1.5px;width:56px;background:var(--color-accent);margin:2.25rem 0}
+    .hero .body-text{font-size:14px;color:var(--color-secondary);line-height:1.95;max-width:560px}
+    .hero .body-text p{margin-bottom:1.1rem}
+    .hero .body-text p:last-child{margin-bottom:0}
+
+    section{padding:3rem 0;border-top:0.5px solid var(--border-soft)}
+    .label{font-size:11px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:2rem;text-transform:uppercase}
+
+    .research-card{padding:1.75rem;border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary)}
+    .research-card .thesis-title{font-size:17px;font-weight:500;line-height:1.5;margin-bottom:0.6rem;letter-spacing:-0.005em}
+    .research-card .thesis-meta{font-size:12px;color:var(--color-tertiary);margin-bottom:1.25rem;letter-spacing:0.02em}
+    .research-card dl{display:flex;flex-direction:column;gap:0.55rem;border-top:0.5px solid var(--border-soft);padding-top:1.25rem}
+    .research-card .row{display:grid;grid-template-columns:80px 1fr;gap:1rem;align-items:start}
+    .research-card dt{font-size:12px;color:var(--color-tertiary);font-weight:500}
+    .research-card dd{font-size:13px;color:var(--color-secondary);line-height:1.6}
+
+    .keywords-list{display:flex;flex-wrap:wrap;gap:0.5rem}
+    .kw{font-size:12px;color:var(--color-accent);background:rgba(45,82,50,0.06);padding:0.45rem 0.85rem;border-radius:20px;border:0.5px solid rgba(45,82,50,0.18);letter-spacing:0.005em}
+
+    .framework-list{display:flex;flex-direction:column;gap:0.85rem}
+    .framework-item{padding:1.25rem 1.5rem;border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary)}
+    .framework-name{font-size:14px;font-weight:500;color:var(--color-primary);margin-bottom:0.4rem;letter-spacing:-0.005em}
+    .framework-desc{font-size:13px;color:var(--color-secondary);line-height:1.7}
+
+    .reading-intro{font-size:13px;color:var(--color-secondary);line-height:1.75;margin-bottom:1.5rem;max-width:520px}
+    .book-list{display:flex;flex-direction:column;gap:0;list-style:none}
+    .book-item{display:flex;justify-content:space-between;align-items:center;padding:0.95rem 0;border-bottom:0.5px solid var(--border-soft);gap:1rem}
+    .book-item:last-child{border-bottom:none}
+    .book-info{flex:1;min-width:0}
+    .book-title{font-size:14px;font-weight:500;margin-bottom:0.15rem;letter-spacing:-0.005em}
+    .book-author{font-size:12px;color:var(--color-tertiary);line-height:1.5}
+    .book-status{font-size:11px;color:var(--color-accent);background:rgba(45,82,50,0.08);padding:0.3rem 0.6rem;border-radius:3px;font-weight:500;flex-shrink:0;letter-spacing:0.02em}
+
+    .activity-list{display:flex;flex-direction:column;gap:0;list-style:none}
+    .activity-item{display:grid;grid-template-columns:80px 1fr;gap:1.25rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border-soft);align-items:start}
+    .activity-item:last-child{border-bottom:none}
+    .activity-year{font-size:12px;color:var(--color-tertiary);font-weight:500}
+    .activity-name{font-size:14px;color:var(--color-primary);line-height:1.6}
+
+    .future h3{font-size:22px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:0.85rem}
+    .future p{font-size:14px;color:var(--color-secondary);line-height:1.85;max-width:560px}
+
+    .cta-final{text-align:center;padding:4rem 0 4.5rem;border-top:0.5px solid var(--border-soft);background:var(--bg-secondary)}
+    .cta-final h2{font-size:24px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:1rem}
+    .cta-final p{font-size:13px;color:var(--color-secondary);line-height:1.85;margin-bottom:2.25rem}
+    .cta-button{display:inline-flex;align-items:center;gap:0.5rem;padding:0.95rem 1.75rem;background:var(--color-accent);color:var(--bg-primary)!important;border-radius:6px;font-size:14px;font-weight:500;letter-spacing:0.005em;transition:transform 0.2s, opacity 0.2s}
+    .cta-button:hover{transform:translateY(-1px);opacity:0.93;color:var(--bg-primary)!important}
+
+    footer{border-top:0.5px solid var(--border-soft);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+    footer .copyright{font-size:11px;color:var(--color-tertiary)}
+    footer .socials{display:flex;gap:1.25rem;align-items:center}
+    footer .socials a{font-size:11px;color:var(--color-secondary);display:inline-flex;align-items:center;gap:0.35rem}
+    footer .socials a svg{flex-shrink:0}
+    .site-credit{text-align:center;padding:1.25rem 0 2rem}
+    .site-credit p{font-size:11px;color:var(--color-tertiary);line-height:1.75}
+    .site-credit .credit-line{font-weight:500;letter-spacing:0.05em;color:var(--color-secondary);margin-bottom:0.2rem}
+    .site-credit a{color:inherit;border-bottom:0.5px solid var(--border-soft);transition:color 0.2s, border-color 0.2s}
+    .site-credit a:hover{color:var(--color-accent);border-color:var(--color-accent)}
+
+    @media(max-width:640px){
+      .container{padding:0 1.25rem}
+      nav .links{gap:0.9rem;flex-wrap:wrap;justify-content:flex-end}
+      nav .links a{font-size:12px}
+      .hero{padding:2.5rem 0 2rem}
+      .hero h1{font-size:30px}
+      .hero h2{font-size:18px}
+      .research-card{padding:1.25rem}
+      .research-card .thesis-title{font-size:15px}
+      .research-card .row{grid-template-columns:1fr;gap:0.2rem}
+      .activity-item{grid-template-columns:1fr;gap:0.2rem}
+      .future h3{font-size:19px}
+      .cta-final h2{font-size:20px}
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">이소희</a>
+      <div class="links">
+        <a href="index.html#about">소개</a>
+        <a href="research.html" class="active">연구</a>
+        <a href="coaching.html">코칭</a>
+        <a href="index.html#journal">저널</a>
+        <a href="index.html#notes">노트</a>
+        <a href="index.html#en" class="lang">EN</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <p class="greeting">Research</p>
+      <h1>연구</h1>
+      <h2>30년의 빙판 감각을,<br>학술 언어로 번역합니다.</h2>
+      <div class="accent-line"></div>
+      <div class="body-text">
+        <p>빙판에서 어린 선수가 무언가를 배우는 과정 — 체화(embodiment) — 은 대부분 암묵적이고, 느낌으로만 전달됩니다. 그 과정을 학술적 언어로 옮기는 작업에 관심이 있습니다.</p>
+        <p>특히 처음 스케이트를 신는 초등학생 시기의 기초 자세는 그 선수의 평생을 좌우합니다. 그 결정적 시기에 코치들은 무엇을 보고, 어떻게 가르치며, 몸으로 무엇을 전달하고 있는가 — 석사논문에서는 그 지도 경험을 질적 · 현상학적 연구로 들여다보고 있습니다.</p>
+        <p>습관화된 신체가 곧 신체도식(body schema)을 완성한다는 메를로-퐁티의 통찰을, 빙판이라는 구체적 현장에서 실천 가능한 형태로 번역하는 것이 장기적인 연구 방향입니다.</p>
+      </div>
+    </section>
+
+    <section class="current-research">
+      <p class="label">현재 연구</p>
+      <div class="research-card">
+        <p class="thesis-title">초등학생 쇼트트랙 코치들의 바디 스키마(Body Schema) 지도 경험에 대한 현상학적 연구</p>
+        <p class="thesis-meta">석사 학위 논문 (가제) · 진행 중</p>
+        <dl>
+          <div class="row">
+            <dt>소속</dt>
+            <dd>경희대학교 일반체육대학원</dd>
+          </div>
+          <div class="row">
+            <dt>분야</dt>
+            <dd>스포츠 현상학 · 질적 연구</dd>
+          </div>
+          <div class="row">
+            <dt>대상</dt>
+            <dd>초등학생을 지도하는 쇼트트랙 코치</dd>
+          </div>
+          <div class="row">
+            <dt>접근</dt>
+            <dd>코치들의 지도 경험을 현상학적 면접과 분석으로 들여다보는 작업</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="keywords">
+      <p class="label">연구 키워드</p>
+      <div class="keywords-list">
+        <span class="kw">스포츠 현상학</span>
+        <span class="kw">신체도식 · Body Schema</span>
+        <span class="kw">체화 · Embodiment</span>
+        <span class="kw">메를로-퐁티</span>
+        <span class="kw">질적 연구</span>
+        <span class="kw">초등 코칭</span>
+        <span class="kw">관절자유도</span>
+        <span class="kw">운동학습 습득</span>
+        <span class="kw">쇼트트랙</span>
+      </div>
+    </section>
+
+    <section class="framework">
+      <p class="label">이론적 배경</p>
+      <div class="framework-list">
+        <div class="framework-item">
+          <p class="framework-name">신체현상학</p>
+          <p class="framework-desc">메를로-퐁티의 신체현상학을 출발점으로, 몸을 통해 세계를 인식하고 학습하는 방식을 탐구합니다.</p>
+        </div>
+        <div class="framework-item">
+          <p class="framework-name">신체도식 (Body Schema)</p>
+          <p class="framework-desc">의식적으로 통제하지 않아도 몸이 스스로 알고 움직이는 구조 — 빙판 위에서 그것이 어떻게 형성되고 전수되는가.</p>
+        </div>
+        <div class="framework-item">
+          <p class="framework-name">체화된 인지 (Embodied Cognition)</p>
+          <p class="framework-desc">앎이 머리에만 있는 것이 아니라 몸에 새겨진다는 관점. 코치의 지도 경험을 들여다보는 렌즈로 사용합니다.</p>
+        </div>
+        <div class="framework-item">
+          <p class="framework-name">질적 · 현상학적 연구방법</p>
+          <p class="framework-desc">코치들의 생생한 지도 경험을 듣고, 그 안에서 의미를 발견하는 방식. 만들어내는 것이 아니라 들여다보는 작업.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading">
+      <p class="label">독서 노트</p>
+      <p class="reading-intro">현재 연구와 직접 연결되는 책을 천천히 읽고 있습니다.</p>
+      <ul class="book-list">
+        <li class="book-item">
+          <div class="book-info">
+            <p class="book-title">『지각의 현상학』</p>
+            <p class="book-author">모리스 메를로-퐁티</p>
+          </div>
+          <span class="book-status">읽는 중</span>
+        </li>
+        <li class="book-item">
+          <div class="book-info">
+            <p class="book-title">『운동학습이론』</p>
+            <p class="book-author">김선진</p>
+          </div>
+          <span class="book-status">읽는 중</span>
+        </li>
+        <li class="book-item">
+          <div class="book-info">
+            <p class="book-title">『실천이성비판』</p>
+            <p class="book-author">임마누엘 칸트</p>
+          </div>
+          <span class="book-status">읽는 중</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="activities">
+      <p class="label">학술 활동</p>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <span class="activity-year">2022</span>
+          <span class="activity-name">한국스포츠의학회 춘계학술대회 참가</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="future">
+      <p class="label">향후 연구 방향</p>
+      <h3>박사과정 진학을 고민하고 있습니다.</h3>
+      <p>석사 졸업 후 박사과정 진학을 검토하고 있으며, 경희대학교 또는 고려대학교 일반체육대학원이 후보입니다. 박사 단계에서는 신체도식 연구를 스포츠 현장에 직접 적용할 수 있는 방향으로 확장하고 싶습니다.</p>
+    </section>
+
+  </div>
+
+  <section class="cta-final">
+    <div class="container">
+      <h2>연구 협업 · 학회 발표 제안은<br>이메일로 받습니다.</h2>
+      <p>학술 협업, 발표 제안, 자료 공유 등 연구 관련 문의는<br>아래 이메일로 보내주세요.</p>
+      <a href="mailto:le8389@naver.com" class="cta-button">le8389@naver.com</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <footer>
+      <p class="copyright">© 2026 이소희</p>
+      <div class="socials">
+        <a href="https://instagram.com/sohee_lee12" target="_blank" rel="noopener" aria-label="Instagram @sohee_lee12">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          @sohee_lee12
+        </a>
+        <a href="http://pf.kakao.com/_yJxoTX/chat" target="_blank" rel="noopener" aria-label="카카오톡 채널 코치 이소희">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3C6.48 3 2 6.58 2 11c0 2.74 1.72 5.16 4.36 6.6L5.3 21.3c-.1.32.24.58.52.4l4.4-2.86c.58.08 1.18.16 1.78.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"></path>
+          </svg>
+          KakaoTalk
+        </a>
+        <a href="mailto:le8389@naver.com">Email</a>
+      </div>
+    </footer>
+    <div class="site-credit">
+      <p class="credit-line">Designed &amp; built by 이소희</p>
+      <p>사이트 제작 · 협업 문의 — <a href="mailto:le8389@naver.com">le8389@naver.com</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
