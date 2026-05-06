@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="이소희의 노트 — 책에서 발견한 한 줄, 빙판에서 본 순간, 연구하다가 떠오른 단상.">
+  <title>노트 · 이소희</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg-primary:#FBFAF4;
+      --bg-secondary:#FFFFFF;
+      --color-primary:#1A1A1A;
+      --color-secondary:#555;
+      --color-tertiary:#888;
+      --color-accent:#2D5232;
+      --border-soft:rgba(0,0,0,0.06);
+      --font-sans:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    }
+    html,body{font-family:var(--font-sans);background:var(--bg-primary);color:var(--color-primary);line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none;transition:color 0.2s}
+    a:hover{color:var(--color-accent)}
+    .container{max-width:720px;margin:0 auto;padding:0 2rem}
+    nav{padding:1.5rem 0;border-bottom:0.5px solid var(--border-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    nav .logo{font-size:16px;font-weight:500;letter-spacing:0.02em;cursor:pointer}
+    nav .links{display:flex;gap:1.5rem;align-items:center}
+    nav .links a{font-size:14px;color:var(--color-secondary)}
+    nav .links a.active{color:var(--color-accent);font-weight:500}
+    nav .lang{font-size:13px;color:var(--color-accent);font-weight:500}
+
+    .hero{padding:4rem 0 2.5rem}
+    .hero .greeting{font-size:12px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:1.25rem;text-transform:uppercase}
+    .hero h1{font-size:40px;font-weight:500;line-height:1.2;margin-bottom:0.85rem;letter-spacing:-0.01em}
+    .hero h2{font-size:24px;font-weight:400;line-height:1.45;color:var(--color-primary)}
+    .hero .accent-line{height:1.5px;width:56px;background:var(--color-accent);margin:2.25rem 0}
+    .hero .body-text{font-size:15px;color:var(--color-secondary);line-height:1.85;max-width:540px}
+
+    section{padding:3rem 0;border-top:0.5px solid var(--border-soft)}
+
+    .notes-feed{display:flex;flex-direction:column;gap:0}
+    .note{padding:2.25rem 0;border-bottom:0.5px solid var(--border-soft)}
+    .note:first-child{padding-top:0.5rem}
+    .note:last-child{border-bottom:none;padding-bottom:0.5rem}
+    .note-meta{display:flex;gap:0.75rem;align-items:center;font-size:12px;color:var(--color-tertiary);margin-bottom:1rem;flex-wrap:wrap}
+    .note-date{font-weight:500;letter-spacing:0.05em}
+    .note-meta .dot{color:var(--border-soft)}
+    .note-source{color:var(--color-accent);font-weight:500;letter-spacing:0.01em}
+    .note-quote{font-size:16px;font-style:italic;color:var(--color-primary);border-left:2px solid var(--color-accent);padding-left:1.1rem;margin-bottom:1.15rem;line-height:1.7;font-weight:400;letter-spacing:-0.005em}
+    .note-body{font-size:15px;color:var(--color-secondary);line-height:1.8;max-width:600px}
+
+    footer{border-top:0.5px solid var(--border-soft);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+    footer .copyright{font-size:12px;color:var(--color-tertiary)}
+    footer .socials{display:flex;gap:1.25rem;align-items:center}
+    footer .socials a{font-size:12px;color:var(--color-secondary);display:inline-flex;align-items:center;gap:0.35rem}
+    footer .socials a svg{flex-shrink:0}
+    .site-credit{text-align:center;padding:1.25rem 0 2rem}
+    .site-credit p{font-size:12px;color:var(--color-tertiary);line-height:1.75}
+    .site-credit .credit-line{font-weight:500;letter-spacing:0.05em;color:var(--color-secondary);margin-bottom:0.2rem}
+    .site-credit a{color:inherit;border-bottom:0.5px solid var(--border-soft);transition:color 0.2s, border-color 0.2s}
+    .site-credit a:hover{color:var(--color-accent);border-color:var(--color-accent)}
+    .to-top{position:fixed;bottom:1.5rem;right:1.5rem;width:42px;height:42px;border-radius:50%;background:var(--color-accent);color:var(--bg-primary);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.1);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.25s, transform 0.25s, background 0.15s;z-index:100}
+    .to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .to-top:hover{background:#234127}
+    .to-top svg{width:18px;height:18px}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease-out, transform 0.7s ease-out}
+    .fade-in.is-visible{opacity:1;transform:translateY(0)}
+    @media (prefers-reduced-motion: reduce){
+      .fade-in{opacity:1;transform:none;transition:none}
+    }
+
+    @media(max-width:640px){
+      .container{padding:0 1.25rem}
+      nav .links{gap:0.9rem;flex-wrap:wrap;justify-content:flex-end}
+      nav .links a{font-size:13px}
+      .hero{padding:2.5rem 0 2rem}
+      .hero h1{font-size:32px}
+      .hero h2{font-size:20px}
+      .note{padding:1.85rem 0}
+      .note-quote{font-size:15px;padding-left:0.9rem}
+      .note-body{font-size:14.5px}
+      .to-top{bottom:1rem;right:1rem;width:38px;height:38px}
+      .to-top svg{width:16px;height:16px}
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">이소희</a>
+      <div class="links">
+        <a href="index.html#about">소개</a>
+        <a href="research.html">연구</a>
+        <a href="coaching.html">코칭</a>
+        <a href="journal.html">저널</a>
+        <a href="notes.html" class="active">노트</a>
+        <a href="index.html#en" class="lang">EN</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <p class="greeting">Notes</p>
+      <h1>노트</h1>
+      <h2>책 한 줄, 빙판의 한 장면,<br>연구 중 떠오른 단상.</h2>
+      <div class="accent-line"></div>
+      <p class="body-text">짧게, 자주 쓰는 곳. 읽고 있는 책에서 발견한 문장, 코칭 현장에서 마주친 순간, 연구하다가 떠오른 의문을 그때그때 남깁니다.</p>
+    </section>
+
+    <section class="notes-section">
+      <div class="notes-feed">
+
+        <article class="note">
+          <div class="note-meta">
+            <span class="note-date">2026.05</span>
+            <span class="dot">·</span>
+            <span class="note-source">현장 노트</span>
+          </div>
+          <p class="note-body">7세 첫 수업. 미끄러져 넘어진 아이가 즉각 일어나, 안 다친 척 옆을 살피는 표정. 어디가 아픈 게 아니라 보이는 모습이 두려운 것이다. 우리가 가르치기 전에 아이는 이미 눈치를 배운다. 가장 먼저 풀어야 할 것은 그것이다.</p>
+        </article>
+
+        <article class="note">
+          <div class="note-meta">
+            <span class="note-date">2026.05</span>
+            <span class="dot">·</span>
+            <span class="note-source">『실천이성비판』 — 임마누엘 칸트</span>
+          </div>
+          <blockquote class="note-quote">“내 위의 별이 빛나는 하늘과, 내 안의 도덕법칙.”</blockquote>
+          <p class="note-body">스포츠에서 ‘이기는 일’과 ‘바른 일’이 충돌할 때, 우리는 선수에게 무엇을 말해줘야 하는가. 본격적으로 읽기 시작했다. 천천히 가는 중.</p>
+        </article>
+
+        <article class="note">
+          <div class="note-meta">
+            <span class="note-date">2026.04</span>
+            <span class="dot">·</span>
+            <span class="note-source">『지각의 현상학』 — 모리스 메를로-퐁티</span>
+          </div>
+          <blockquote class="note-quote">“몸은 보이는 동시에 보는 것이다.”</blockquote>
+          <p class="note-body">빙판에서 코너를 도는 선수는 자기 몸이 어디 있는지 의식하지 않는다. 의식하기 시작하면 이미 늦다. 메를로-퐁티가 말한 ‘보이는 동시에 보는 몸’을, 쇼트트랙 코치는 다른 누구보다 일찍 만난다.</p>
+        </article>
+
+        <article class="note">
+          <div class="note-meta">
+            <span class="note-date">2026.04</span>
+            <span class="dot">·</span>
+            <span class="note-source">『운동학습이론』 — 김선진</span>
+          </div>
+          <p class="note-body">운동학습은 ‘같은 동작의 반복’이 아니라 ‘같은 의도를 다양한 조건에서 실현하는 것’이라고 한다. 코치 13년차에 도착한 결론과 정확히 일치했다. 가르칠 때 같은 동작을 시키지 않고, 같은 의도를 만들려 노력한다.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <footer>
+      <p class="copyright">© 2026 이소희</p>
+      <div class="socials">
+        <a href="https://instagram.com/sohee_lee12" target="_blank" rel="noopener" aria-label="Instagram @sohee_lee12">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          @sohee_lee12
+        </a>
+        <a href="http://pf.kakao.com/_yJxoTX/chat" target="_blank" rel="noopener" aria-label="카카오톡 채널 코치 이소희">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3C6.48 3 2 6.58 2 11c0 2.74 1.72 5.16 4.36 6.6L5.3 21.3c-.1.32.24.58.52.4l4.4-2.86c.58.08 1.18.16 1.78.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"></path>
+          </svg>
+          KakaoTalk
+        </a>
+        <a href="mailto:le8389@naver.com">Email</a>
+      </div>
+    </footer>
+    <div class="site-credit">
+      <p class="credit-line">Designed &amp; built by 이소희</p>
+      <p>사이트 제작 · 협업 문의 — <a href="mailto:le8389@naver.com">le8389@naver.com</a></p>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="맨 위로">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('toTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) btn.classList.add('visible');
+        else btn.classList.remove('visible');
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!('IntersectionObserver' in window)) return;
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('section').forEach(function(el) {
+        if (el.classList.contains('hero')) return;
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
