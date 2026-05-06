@@ -24,84 +24,85 @@
     a:hover{color:var(--color-accent)}
     .container{max-width:720px;margin:0 auto;padding:0 2rem}
     nav{padding:1.5rem 0;border-bottom:0.5px solid var(--border-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    nav .logo{font-size:15px;font-weight:500;letter-spacing:0.02em;cursor:pointer}
+    nav .logo{font-size:16px;font-weight:500;letter-spacing:0.02em;cursor:pointer}
     nav .links{display:flex;gap:1.5rem;align-items:center}
-    nav .links a{font-size:13px;color:var(--color-secondary)}
+    nav .links a{font-size:14px;color:var(--color-secondary)}
     nav .links a.active{color:var(--color-accent);font-weight:500}
-    nav .lang{font-size:12px;color:var(--color-accent);font-weight:500}
+    nav .lang{font-size:13px;color:var(--color-accent);font-weight:500}
 
     .hero{padding:4rem 0 2.5rem}
-    .hero .greeting{font-size:11px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:1.25rem;text-transform:uppercase}
-    .hero h1{font-size:38px;font-weight:500;line-height:1.2;margin-bottom:0.75rem;letter-spacing:-0.01em}
-    .hero h2{font-size:22px;font-weight:400;line-height:1.45;color:var(--color-primary)}
+    .hero .greeting{font-size:12px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:1.25rem;text-transform:uppercase}
+    .hero h1{font-size:40px;font-weight:500;line-height:1.2;margin-bottom:0.85rem;letter-spacing:-0.01em}
+    .hero h2{font-size:24px;font-weight:400;line-height:1.45;color:var(--color-primary)}
     .hero .accent-line{height:1.5px;width:56px;background:var(--color-accent);margin:2.25rem 0}
-    .hero .body-text{font-size:14px;color:var(--color-secondary);line-height:1.85;max-width:520px;margin-bottom:2rem}
+    .hero .body-text{font-size:15px;color:var(--color-secondary);line-height:1.85;max-width:540px;margin-bottom:2rem}
     .hero .ctas{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
-    .hero .ctas .primary{font-size:13px;color:var(--color-accent);font-weight:500}
+    .hero .ctas .primary{font-size:14px;color:var(--color-accent);font-weight:500}
 
     .hero-image{margin-top:2rem;border-radius:8px;overflow:hidden;background:var(--bg-secondary);border:0.5px solid var(--border-soft)}
     .hero-image img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
 
     section{padding:3rem 0;border-top:0.5px solid var(--border-soft)}
-    .label{font-size:11px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:2rem;text-transform:uppercase}
+    .label{font-size:12px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:2rem;text-transform:uppercase}
 
     .credentials-list{display:flex;flex-direction:column;gap:1.5rem}
     .cred-item{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;align-items:start}
-    .cred-period{font-size:12px;color:var(--color-tertiary);font-weight:500;letter-spacing:0.02em}
-    .cred-text .cred-title{font-size:14px;font-weight:500;margin-bottom:0.25rem;letter-spacing:-0.005em}
-    .cred-text .cred-detail{font-size:13px;color:var(--color-secondary);line-height:1.6}
+    .cred-period{font-size:13px;color:var(--color-tertiary);font-weight:500;letter-spacing:0.02em}
+    .cred-text .cred-title{font-size:15px;font-weight:500;margin-bottom:0.3rem;letter-spacing:-0.005em}
+    .cred-text .cred-detail{font-size:14px;color:var(--color-secondary);line-height:1.65}
 
     .qual-list{display:flex;flex-direction:column;gap:0.6rem}
-    .qual-list li{font-size:14px;color:var(--color-secondary);list-style:none;padding-left:1rem;position:relative}
+    .qual-list li{font-size:15px;color:var(--color-secondary);list-style:none;padding-left:1rem;position:relative}
     .qual-list li::before{content:"·";position:absolute;left:0;color:var(--color-accent);font-weight:700}
 
-    .philosophy h3{font-size:24px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:0.75rem}
-    .philosophy .tagline{font-size:14px;color:var(--color-secondary);line-height:1.85;max-width:520px;margin-bottom:2.5rem}
+    .philosophy h3{font-size:26px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:0.85rem}
+    .philosophy .tagline{font-size:15px;color:var(--color-secondary);line-height:1.85;max-width:540px;margin-bottom:2.5rem}
     .strengths-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
-    .strength{padding:1.5rem;border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary)}
-    .strength-num{font-size:11px;color:var(--color-accent);font-weight:500;letter-spacing:0.1em;margin-bottom:0.5rem}
-    .strength-title{font-size:16px;font-weight:500;margin-bottom:0.5rem;letter-spacing:-0.005em}
-    .strength-desc{font-size:13px;color:var(--color-secondary);line-height:1.7}
+    .strength{padding:1.5rem;border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary);transition:transform 0.25s ease, border-color 0.25s ease}
+    .strength:hover{transform:translateY(-2px);border-color:rgba(45,82,50,0.2)}
+    .strength-num{font-size:12px;color:var(--color-accent);font-weight:500;letter-spacing:0.1em;margin-bottom:0.5rem}
+    .strength-title{font-size:17px;font-weight:500;margin-bottom:0.5rem;letter-spacing:-0.005em}
+    .strength-desc{font-size:14px;color:var(--color-secondary);line-height:1.7}
 
     .medal-section .figure{margin-top:0.5rem;border-radius:8px;overflow:hidden;background:var(--bg-secondary);border:0.5px solid var(--border-soft)}
     .medal-section .figure img{display:block;width:100%;height:auto;object-fit:cover}
-    .medal-section .caption{font-size:12px;color:var(--color-tertiary);line-height:1.6;margin-top:0.75rem;text-align:center}
-    .medal-section h3{font-size:22px;font-weight:500;line-height:1.4;margin-bottom:0.75rem;letter-spacing:-0.01em}
-    .medal-section p{font-size:14px;color:var(--color-secondary);line-height:1.85;max-width:520px;margin-bottom:1.5rem}
+    .medal-section .caption{font-size:13px;color:var(--color-tertiary);line-height:1.6;margin-top:0.85rem;text-align:center}
+    .medal-section h3{font-size:24px;font-weight:500;line-height:1.4;margin-bottom:0.85rem;letter-spacing:-0.01em}
+    .medal-section p{font-size:15px;color:var(--color-secondary);line-height:1.85;max-width:540px;margin-bottom:1.5rem}
 
     .lesson-info dl{display:flex;flex-direction:column;gap:0}
-    .lesson-info .row{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;padding:0.9rem 0;border-bottom:0.5px solid var(--border-soft)}
+    .lesson-info .row{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;padding:0.95rem 0;border-bottom:0.5px solid var(--border-soft)}
     .lesson-info .row:last-child{border-bottom:none}
-    .lesson-info dt{font-size:13px;color:var(--color-tertiary);font-weight:500}
-    .lesson-info dd{font-size:14px;color:var(--color-primary);line-height:1.6}
+    .lesson-info dt{font-size:14px;color:var(--color-tertiary);font-weight:500}
+    .lesson-info dd{font-size:15px;color:var(--color-primary);line-height:1.65}
 
-    .faq details{border-bottom:0.5px solid var(--border-soft);padding:1.1rem 0}
+    .faq details{border-bottom:0.5px solid var(--border-soft);padding:1.15rem 0}
     .faq details:last-child{border-bottom:none}
-    .faq summary{font-size:14px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding-right:0.5rem;color:var(--color-primary)}
+    .faq summary{font-size:15px;font-weight:500;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding-right:0.5rem;color:var(--color-primary)}
     .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";font-size:18px;color:var(--color-accent);font-weight:300;transition:transform 0.2s}
+    .faq summary::after{content:"+";font-size:20px;color:var(--color-accent);font-weight:300;transition:transform 0.2s}
     .faq details[open] summary::after{content:"−"}
-    .faq details p{font-size:13px;color:var(--color-secondary);line-height:1.85;margin-top:0.85rem;padding-right:1rem}
+    .faq details p{font-size:14px;color:var(--color-secondary);line-height:1.85;margin-top:0.9rem;padding-right:1rem}
 
     .photo-grid{margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
     .photo-grid .figure{border-radius:6px;overflow:hidden;background:var(--bg-secondary);border:0.5px solid var(--border-soft);aspect-ratio:1/1}
     .photo-grid .figure img{display:block;width:100%;height:100%;object-fit:cover}
 
-    .schedule-intro{font-size:14px;color:var(--color-secondary);line-height:1.85;max-width:520px;margin-bottom:1.75rem}
+    .schedule-intro{font-size:15px;color:var(--color-secondary);line-height:1.85;max-width:540px;margin-bottom:1.75rem}
     .calendar{border:0.5px solid var(--border-soft);border-radius:8px;background:var(--bg-secondary);overflow:hidden}
     .cal-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:0.5px solid var(--border-soft)}
-    .cal-header h3{font-size:14px;font-weight:500;letter-spacing:0.01em}
+    .cal-header h3{font-size:15px;font-weight:500;letter-spacing:0.01em}
     .cal-nav{background:none;border:none;color:var(--color-accent);font-size:18px;cursor:pointer;padding:0.25rem 0.7rem;line-height:1;border-radius:4px;transition:background 0.15s}
     .cal-nav:hover{background:rgba(45,82,50,0.08)}
     .cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);border-bottom:0.5px solid var(--border-soft)}
-    .cal-weekdays span{font-size:11px;text-align:center;padding:0.65rem 0;color:var(--color-tertiary);font-weight:500;letter-spacing:0.05em}
+    .cal-weekdays span{font-size:12px;text-align:center;padding:0.7rem 0;color:var(--color-tertiary);font-weight:500;letter-spacing:0.05em}
     .cal-weekdays span:first-child{color:#A8554F}
     .cal-weekdays span:last-child{color:#5470A0}
     .cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
-    .cal-day{min-height:96px;padding:0.45rem 0.4rem;border-right:0.5px solid var(--border-soft);border-bottom:0.5px solid var(--border-soft);font-size:12px;display:flex;flex-direction:column;gap:0.2rem;background:var(--bg-secondary)}
+    .cal-day{min-height:100px;padding:0.5rem 0.45rem;border-right:0.5px solid var(--border-soft);border-bottom:0.5px solid var(--border-soft);font-size:13px;display:flex;flex-direction:column;gap:0.25rem;background:var(--bg-secondary)}
     .cal-day:nth-child(7n){border-right:none}
     .cal-day-empty{background:var(--bg-primary);opacity:0.4}
-    .cal-date{font-size:12px;color:var(--color-secondary);font-weight:500}
+    .cal-date{font-size:13px;color:var(--color-secondary);font-weight:500}
     .cal-day.is-today{box-shadow:inset 0 0 0 1.5px var(--color-accent)}
     .cal-day.is-today .cal-date{color:var(--color-accent);font-weight:600}
     .cal-day.is-past{background:var(--bg-primary);opacity:0.45}
@@ -109,29 +110,29 @@
     .cal-day.is-closed{background:var(--bg-primary)}
     .cal-day.is-closed .cal-date{color:var(--color-tertiary)}
     .cal-day.has-slots{background:rgba(45,82,50,0.04)}
-    .cal-slot{font-size:10px;background:rgba(45,82,50,0.12);color:var(--color-accent);padding:0.2rem 0.35rem;border-radius:3px;text-align:center;font-weight:500;line-height:1.3;letter-spacing:0.01em}
-    .schedule-note{font-size:12px;color:var(--color-tertiary);line-height:1.8;margin-top:1.25rem;text-align:center}
+    .cal-slot{font-size:11px;background:rgba(45,82,50,0.12);color:var(--color-accent);padding:0.22rem 0.4rem;border-radius:3px;text-align:center;font-weight:500;line-height:1.3;letter-spacing:0.01em}
+    .schedule-note{font-size:13px;color:var(--color-tertiary);line-height:1.8;margin-top:1.25rem;text-align:center}
     .schedule-note a{color:var(--color-accent);font-weight:500;border-bottom:0.5px solid var(--color-accent);transition:opacity 0.15s}
     .schedule-note a:hover{opacity:0.7}
     .schedule-legend{display:flex;justify-content:center;gap:1.25rem;margin-top:1rem;flex-wrap:wrap}
-    .schedule-legend span{font-size:11px;color:var(--color-tertiary);display:inline-flex;align-items:center;gap:0.4rem}
+    .schedule-legend span{font-size:12px;color:var(--color-tertiary);display:inline-flex;align-items:center;gap:0.4rem}
     .schedule-legend .dot{width:10px;height:10px;border-radius:2px;display:inline-block}
     .schedule-legend .dot-available{background:rgba(45,82,50,0.12);border:0.5px solid var(--color-accent)}
     .schedule-legend .dot-closed{background:var(--bg-primary);border:0.5px solid var(--border-soft)}
 
     .cta-final{text-align:center;padding:4rem 0 4.5rem;border-top:0.5px solid var(--border-soft);background:var(--bg-secondary)}
-    .cta-final h2{font-size:24px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:1rem}
-    .cta-final p{font-size:13px;color:var(--color-secondary);line-height:1.85;margin-bottom:2.25rem}
-    .cta-button{display:inline-flex;align-items:center;gap:0.5rem;padding:0.95rem 1.75rem;background:var(--color-accent);color:var(--bg-primary)!important;border-radius:6px;font-size:14px;font-weight:500;letter-spacing:-0.005em;transition:transform 0.2s, opacity 0.2s}
+    .cta-final h2{font-size:26px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:1rem}
+    .cta-final p{font-size:14px;color:var(--color-secondary);line-height:1.85;margin-bottom:2.25rem}
+    .cta-button{display:inline-flex;align-items:center;gap:0.5rem;padding:0.95rem 1.75rem;background:var(--color-accent);color:var(--bg-primary)!important;border-radius:6px;font-size:15px;font-weight:500;letter-spacing:-0.005em;transition:transform 0.2s, opacity 0.2s}
     .cta-button:hover{transform:translateY(-1px);opacity:0.93;color:var(--bg-primary)!important}
 
     footer{border-top:0.5px solid var(--border-soft);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
-    footer .copyright{font-size:11px;color:var(--color-tertiary)}
+    footer .copyright{font-size:12px;color:var(--color-tertiary)}
     footer .socials{display:flex;gap:1.25rem;align-items:center}
-    footer .socials a{font-size:11px;color:var(--color-secondary);display:inline-flex;align-items:center;gap:0.35rem}
+    footer .socials a{font-size:12px;color:var(--color-secondary);display:inline-flex;align-items:center;gap:0.35rem}
     footer .socials a svg{flex-shrink:0}
     .site-credit{text-align:center;padding:1.25rem 0 2rem}
-    .site-credit p{font-size:11px;color:var(--color-tertiary);line-height:1.75}
+    .site-credit p{font-size:12px;color:var(--color-tertiary);line-height:1.75}
     .site-credit .credit-line{font-weight:500;letter-spacing:0.05em;color:var(--color-secondary);margin-bottom:0.2rem}
     .site-credit a{color:inherit;border-bottom:0.5px solid var(--border-soft);transition:color 0.2s, border-color 0.2s}
     .site-credit a:hover{color:var(--color-accent);border-color:var(--color-accent)}
@@ -139,23 +140,28 @@
     .to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
     .to-top:hover{background:#234127}
     .to-top svg{width:18px;height:18px}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease-out, transform 0.7s ease-out}
+    .fade-in.is-visible{opacity:1;transform:translateY(0)}
+    @media (prefers-reduced-motion: reduce){
+      .fade-in{opacity:1;transform:none;transition:none}
+    }
 
     @media(max-width:640px){
       .container{padding:0 1.25rem}
       nav .links{gap:0.9rem;flex-wrap:wrap;justify-content:flex-end}
-      nav .links a{font-size:12px}
+      nav .links a{font-size:13px}
       .hero{padding:2.5rem 0 2rem}
-      .hero h1{font-size:30px}
-      .hero h2{font-size:18px}
+      .hero h1{font-size:32px}
+      .hero h2{font-size:20px}
       .cred-item{grid-template-columns:1fr;gap:0.25rem}
-      .lesson-info .row{grid-template-columns:1fr;gap:0.25rem;padding:0.75rem 0}
-      .lesson-info dt{font-size:12px}
-      .philosophy h3,.medal-section h3{font-size:20px}
-      .cta-final h2{font-size:20px}
-      .cal-day{min-height:80px;padding:0.3rem 0.25rem}
-      .cal-date{font-size:11px}
-      .cal-slot{font-size:9px;padding:0.15rem 0.25rem}
-      .cal-weekdays span{font-size:10px;padding:0.5rem 0}
+      .lesson-info .row{grid-template-columns:1fr;gap:0.25rem;padding:0.8rem 0}
+      .lesson-info dt{font-size:13px}
+      .philosophy h3,.medal-section h3{font-size:22px}
+      .cta-final h2{font-size:22px}
+      .cal-day{min-height:84px;padding:0.35rem 0.3rem}
+      .cal-date{font-size:12px}
+      .cal-slot{font-size:10px;padding:0.15rem 0.3rem}
+      .cal-weekdays span{font-size:11px;padding:0.55rem 0}
       .to-top{bottom:1rem;right:1rem;width:38px;height:38px}
       .to-top svg{width:16px;height:16px}
     }
@@ -418,9 +424,7 @@
   </button>
 
   <script>
-    /* ============================================================
-       맨 위로 버튼 — 스크롤 300px 이상 내려갔을 때 나타남
-       ============================================================ */
+    /* 맨 위로 버튼 */
     (function() {
       const btn = document.getElementById('toTop');
       if (!btn) return;
@@ -430,6 +434,27 @@
       });
       btn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    /* 섹션 스크롤 페이드인 */
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!('IntersectionObserver' in window)) return;
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+      document.querySelectorAll('section').forEach(function(el) {
+        if (el.classList.contains('hero')) return;
+        el.classList.add('fade-in');
+        observer.observe(el);
       });
     })();
 
@@ -508,7 +533,6 @@
           const isPast = cellDate < todayMidnight;
           const isClosed = lessonSchedule.closedDates.includes(key);
 
-          // 시간 결정 : customSlots > defaultSlots
           const hasCustom = Object.prototype.hasOwnProperty.call(lessonSchedule.customSlots, key);
           const customSlots = hasCustom ? lessonSchedule.customSlots[key] : null;
           const defaultSlots = lessonSchedule.defaultSlots[dayOfWeek] || [];
