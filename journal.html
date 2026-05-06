@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="이소희의 저널 — 빙판, 연구, 코칭에서 시작된 긴 글들. 30년의 감각을 학술 언어로 번역하는 작업.">
+  <title>저널 · 이소희</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg-primary:#FBFAF4;
+      --bg-secondary:#FFFFFF;
+      --color-primary:#1A1A1A;
+      --color-secondary:#555;
+      --color-tertiary:#888;
+      --color-accent:#2D5232;
+      --border-soft:rgba(0,0,0,0.06);
+      --font-sans:'Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    }
+    html,body{font-family:var(--font-sans);background:var(--bg-primary);color:var(--color-primary);line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none;transition:color 0.2s}
+    a:hover{color:var(--color-accent)}
+    .container{max-width:720px;margin:0 auto;padding:0 2rem}
+    nav{padding:1.5rem 0;border-bottom:0.5px solid var(--border-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    nav .logo{font-size:16px;font-weight:500;letter-spacing:0.02em;cursor:pointer}
+    nav .links{display:flex;gap:1.5rem;align-items:center}
+    nav .links a{font-size:14px;color:var(--color-secondary)}
+    nav .links a.active{color:var(--color-accent);font-weight:500}
+    nav .lang{font-size:13px;color:var(--color-accent);font-weight:500}
+
+    .hero{padding:4rem 0 2.5rem}
+    .hero .greeting{font-size:12px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:1.25rem;text-transform:uppercase}
+    .hero h1{font-size:40px;font-weight:500;line-height:1.2;margin-bottom:0.85rem;letter-spacing:-0.01em}
+    .hero h2{font-size:24px;font-weight:400;line-height:1.45;color:var(--color-primary)}
+    .hero .accent-line{height:1.5px;width:56px;background:var(--color-accent);margin:2.25rem 0}
+    .hero .body-text{font-size:15px;color:var(--color-secondary);line-height:1.85;max-width:540px}
+
+    section{padding:3rem 0;border-top:0.5px solid var(--border-soft)}
+
+    .article{max-width:620px}
+    .article-meta{font-size:12px;letter-spacing:0.2em;color:var(--color-accent);font-weight:500;margin-bottom:1.25rem;text-transform:uppercase}
+    .article-title{font-size:30px;font-weight:500;line-height:1.35;letter-spacing:-0.01em;margin-bottom:2.75rem;color:var(--color-primary)}
+    .article-body{font-size:16px;color:var(--color-primary);line-height:1.95}
+    .article-body p{margin-bottom:1.4rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-divider{text-align:center;margin:2.5rem 0;font-size:16px;color:var(--color-tertiary);letter-spacing:0.5em;user-select:none}
+
+    .cta-final{text-align:center;padding:4rem 0 4.5rem;border-top:0.5px solid var(--border-soft);background:var(--bg-secondary)}
+    .cta-final h2{font-size:24px;font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:1rem}
+    .cta-final p{font-size:14px;color:var(--color-secondary);line-height:1.85;margin-bottom:2.25rem}
+    .cta-button{display:inline-flex;align-items:center;gap:0.5rem;padding:0.95rem 1.75rem;background:var(--color-accent);color:var(--bg-primary)!important;border-radius:6px;font-size:15px;font-weight:500;letter-spacing:0.005em;transition:transform 0.2s, opacity 0.2s}
+    .cta-button:hover{transform:translateY(-1px);opacity:0.93;color:var(--bg-primary)!important}
+
+    footer{border-top:0.5px solid var(--border-soft);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+    footer .copyright{font-size:12px;color:var(--color-tertiary)}
+    footer .socials{display:flex;gap:1.25rem;align-items:center}
+    footer .socials a{font-size:12px;color:var(--color-secondary);display:inline-flex;align-items:center;gap:0.35rem}
+    footer .socials a svg{flex-shrink:0}
+    .site-credit{text-align:center;padding:1.25rem 0 2rem}
+    .site-credit p{font-size:12px;color:var(--color-tertiary);line-height:1.75}
+    .site-credit .credit-line{font-weight:500;letter-spacing:0.05em;color:var(--color-secondary);margin-bottom:0.2rem}
+    .site-credit a{color:inherit;border-bottom:0.5px solid var(--border-soft);transition:color 0.2s, border-color 0.2s}
+    .site-credit a:hover{color:var(--color-accent);border-color:var(--color-accent)}
+    .to-top{position:fixed;bottom:1.5rem;right:1.5rem;width:42px;height:42px;border-radius:50%;background:var(--color-accent);color:var(--bg-primary);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 2px 12px rgba(0,0,0,0.1);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.25s, transform 0.25s, background 0.15s;z-index:100}
+    .to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .to-top:hover{background:#234127}
+    .to-top svg{width:18px;height:18px}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease-out, transform 0.7s ease-out}
+    .fade-in.is-visible{opacity:1;transform:translateY(0)}
+    @media (prefers-reduced-motion: reduce){
+      .fade-in{opacity:1;transform:none;transition:none}
+    }
+
+    @media(max-width:640px){
+      .container{padding:0 1.25rem}
+      nav .links{gap:0.9rem;flex-wrap:wrap;justify-content:flex-end}
+      nav .links a{font-size:13px}
+      .hero{padding:2.5rem 0 2rem}
+      .hero h1{font-size:32px}
+      .hero h2{font-size:20px}
+      .article-title{font-size:24px;margin-bottom:2rem}
+      .article-body{font-size:15.5px;line-height:1.9}
+      .article-divider{margin:2rem 0}
+      .cta-final h2{font-size:20px}
+      .to-top{bottom:1rem;right:1rem;width:38px;height:38px}
+      .to-top svg{width:16px;height:16px}
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">이소희</a>
+      <div class="links">
+        <a href="index.html#about">소개</a>
+        <a href="research.html">연구</a>
+        <a href="coaching.html">코칭</a>
+        <a href="journal.html" class="active">저널</a>
+        <a href="notes.html">노트</a>
+        <a href="index.html#en" class="lang">EN</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <p class="greeting">Journal</p>
+      <h1>저널</h1>
+      <h2>긴 글, 짧은 생각,<br>빙판에서 시작된 작업들.</h2>
+      <div class="accent-line"></div>
+      <p class="body-text">훈련, 연구, 체육인의 일상에 대해 길게 쓰는 곳. 자주는 아니지만, 한 번 쓰면 충분히 풀어 씁니다.</p>
+    </section>
+
+    <section class="article-section">
+      <article class="article">
+        <p class="article-meta">2026.05</p>
+        <h2 class="article-title">111.12미터, 한 바퀴를 도는 시간</h2>
+        <div class="article-body">
+          <p>쇼트트랙의 트랙 한 바퀴는 정확히 111.12미터다 (ISU 공식 규정).</p>
+          <p>5,000미터 경기는 이 한 바퀴를 마흔다섯 번 돈다. 1,500미터는 열세 번 반. 1,000미터는 아홉 번. 500미터는 네 바퀴 반.</p>
+          <p>선수로 15년, 코치로 15년. 나는 결국 111.12미터라는 한 거리 안에서 평생을 보내고 있다.</p>
+
+          <div class="article-divider">—</div>
+
+          <p>처음 스케이트를 신었던 날, 한 바퀴를 돌고 나서 무엇이 가장 신기했는지 지금도 기억한다. 같은 거리를 지나면서 매번 몸이 다른 자세로 그 거리를 ‘읽는다’는 것. 코너에 들어갈 때 어깨가 어디로 떨어지는지, 발날이 빙판을 어떻게 깎는지, 그 미세한 차이가 다음 바퀴를 결정짓는다.</p>
+          <p>그때 나는 그것을 ‘느낌’이라고 불렀다.</p>
+
+          <div class="article-divider">—</div>
+
+          <p>코치가 되고 나서야 알았다. 그 ‘느낌’에 정확한 이름이 있었다.</p>
+          <p>대학원에서 메를로-퐁티의 신체현상학을 만났을 때, 신체도식(body schema)이라는 개념이 내가 평생 몸으로만 알고 있던 그것을 학술적 언어로 정확히 묘사하고 있었다. 의식이 아니라 몸이 먼저 알고, 의식이 따라오기 전에 이미 움직이는 구조. 그것이 빙판 위에서 매 순간 일어나는 일이었다.</p>
+          <p>지금 내가 연구하는 것은 결국 그 ‘느낌’의 구조다. 어떻게 형성되는지, 어떻게 코치를 통해 다음 세대로 전수되는지.</p>
+
+          <div class="article-divider">—</div>
+
+          <p>2022년 베이징 동계올림픽 여자 3000m 계주 결승. 우리 선수들이 그 트랙을 스물일곱 바퀴 돌았다. 한 바퀴 한 바퀴가 똑같지 않았다. 같은 111.12미터인데, 압력이 누적될수록 선수의 몸이 미묘하게 다르게 그 거리를 ‘읽었다’. 코치석에서 그것을 보는 일이 코칭의 가장 어려운 순간이었다. 흔들리는 신체도식을 어떻게 다시 잡아주느냐.</p>
+          <p>은메달을 함께 만든 그 결승은, 이론적으로는 ‘체화된 인지의 회복’이었다. 현장에서는 ‘짧은 한 마디’였다.</p>
+          <p>이 두 언어 사이에서 내 일이 일어난다.</p>
+
+          <div class="article-divider">—</div>
+
+          <p>빙판에서 한 바퀴를 도는 사람이 무엇을 알고 있는지를, 다른 사람이 읽을 수 있는 형태로 번역하는 작업. 그것이 지금 내가 하는 일이다.</p>
+          <p>내가 쓰는 모든 글은 결국 그 한 바퀴 안에서 일어난 일이다.</p>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <section class="cta-final">
+    <div class="container">
+      <h2>긴 글에 대한 답장이나<br>협업 · 강연 제안은 이메일로.</h2>
+      <p>읽어주셔서 감사합니다. 답장 · 의견 · 협업 제안은 환영입니다.</p>
+      <a href="mailto:le8389@naver.com" class="cta-button">le8389@naver.com</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <footer>
+      <p class="copyright">© 2026 이소희</p>
+      <div class="socials">
+        <a href="https://instagram.com/sohee_lee12" target="_blank" rel="noopener" aria-label="Instagram @sohee_lee12">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          @sohee_lee12
+        </a>
+        <a href="http://pf.kakao.com/_yJxoTX/chat" target="_blank" rel="noopener" aria-label="카카오톡 채널 코치 이소희">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3C6.48 3 2 6.58 2 11c0 2.74 1.72 5.16 4.36 6.6L5.3 21.3c-.1.32.24.58.52.4l4.4-2.86c.58.08 1.18.16 1.78.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"></path>
+          </svg>
+          KakaoTalk
+        </a>
+        <a href="mailto:le8389@naver.com">Email</a>
+      </div>
+    </footer>
+    <div class="site-credit">
+      <p class="credit-line">Designed &amp; built by 이소희</p>
+      <p>사이트 제작 · 협업 문의 — <a href="mailto:le8389@naver.com">le8389@naver.com</a></p>
+    </div>
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="맨 위로">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('toTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) btn.classList.add('visible');
+        else btn.classList.remove('visible');
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!('IntersectionObserver' in window)) return;
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('section').forEach(function(el) {
+        if (el.classList.contains('hero')) return;
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
