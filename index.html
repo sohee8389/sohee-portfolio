@@ -101,8 +101,8 @@
         <a href="#about">소개</a>
         <a href="research.html">연구</a>
         <a href="coaching.html">코칭</a>
-        <a href="#journal">저널</a>
-        <a href="#notes">노트</a>
+        <a href="journal.html">저널</a>
+        <a href="notes.html">노트</a>
         <a href="#en" class="lang">EN</a>
       </div>
     </nav>
@@ -116,7 +116,7 @@
       <div class="ctas">
         <a href="http://pf.kakao.com/_yJxoTX/chat" class="primary" target="_blank" rel="noopener">레슨 문의 →</a>
         <span class="divider">·</span>
-        <a href="#journal" class="secondary">최근 글 읽기</a>
+        <a href="journal.html" class="secondary">최근 글 읽기</a>
       </div>
     </section>
 
@@ -136,12 +136,12 @@
         <div class="section-card" id="journal">
           <p class="title">저널</p>
           <p class="desc">훈련, 연구, 체육인의 일상에 대한 긴 글들.</p>
-          <a href="#journal" class="link">전체 글 →</a>
+          <a href="journal.html" class="link">전체 글 →</a>
         </div>
         <div class="section-card" id="notes">
           <p class="title">노트</p>
-          <p class="desc">읽은 책, 본 영화, 그리고 짧은 메모들. 가볍게 쓰는 곳.</p>
-          <a href="#notes" class="link">최근 노트 →</a>
+          <p class="desc">읽은 책에서 발견한 한 줄, 빙판에서 본 순간, 짧은 메모들.</p>
+          <a href="notes.html" class="link">최근 노트 →</a>
         </div>
       </div>
     </section>
@@ -230,7 +230,6 @@
   </button>
 
   <script>
-    /* 맨 위로 버튼 */
     (function() {
       const btn = document.getElementById('toTop');
       if (!btn) return;
@@ -243,11 +242,9 @@
       });
     })();
 
-    /* 섹션 스크롤 페이드인 */
     (function() {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       if (!('IntersectionObserver' in window)) return;
-
       const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -256,7 +253,6 @@
           }
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
       document.querySelectorAll('section').forEach(function(el) {
         if (el.classList.contains('hero')) return;
         el.classList.add('fade-in');
